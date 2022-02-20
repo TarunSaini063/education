@@ -3,7 +3,7 @@
   --color-primary-lite: #1cdcd4;
   --color-body: #212529;
   --color-nav-hover-focus: #05119b;
-  --color-top: rgb(218, 238, 237);
+  --color-top:#e1d0559e;
   --white: #ffffff;
   --dark-color: #171819;
 }
@@ -1222,10 +1222,8 @@ body {
   z-index: 1;
 }
 .slider .slide .testimonial img {
-  width: 14rem;
+  width: 20rem;
   margin: 0 auto;
-  filter: grayscale(1);
-  transition: filter ease 0.3s;
 }
 .slider .slide .testimonial .testimonial__text {
   font-size: 1.4rem;
