@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="./assets/img/favicon.png" rel="icon">
+    <link href="./assets/img/edwise_logo_black.svg" rel="icon">
     <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -27,19 +27,55 @@
     <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css">
 
     <!-- Template Main CSS File -->
-    <link href="./assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .register-button {
+          background-color: #1c87c9;
+          -webkit-border-radius: 60px;
+          border-radius: 60px;
+          border: none;
+          color: #eeeeee;
+          cursor: pointer;
+          display: inline-block;
+          font-family: sans-serif;
+          font-size: 20px;
+          padding: 5px 15px;
+          text-align: center;
+          text-decoration: none;
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+        }
+        @keyframes glowing {
+          0% {
+            background-color: #2ba805;
+            box-shadow: 0 0 5px #2ba805;
+          }
+          50% {
+            background-color: #49e819;
+            box-shadow: 0 0 20px #49e819;
+          }
+          100% {
+            background-color: #2ba805;
+            box-shadow: 0 0 5px #2ba805;
+          }
+        }
+        .register-button {
+          animation: glowing 1300ms infinite;
+        }
+      </style>
 
 </head>
 
 <body>
 
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-center"  style="background: rgb(226, 215, 207);
-background: radial-gradient(circle, rgb(240, 236, 233) 20%, #f19305de 80%);box-shadow: 0px 0px 0px">
-    <div class="container d-flex align-items-center justify-content-between">
+<header id="header" class="fixed-top d-flex align-items-center"  style="background: rgb(255, 255, 255);
+background: radial-gradient(circle, rgb(255, 255, 255) 20%, #ffffff 80%);box-shadow: 0px 0px 0px">
+    <div class="container d-flex align-items-center justify-content-between" style="max-width:95%">
 
         <div class="logo">
-            <h1 class="text-light"><a href="index.html"><span><img src="./assets/img/edwise_logo.svg" width="250"
+            <h1 class="text-light"><a href="index.html"><span><img src="./assets/img/edwise_logo_black.svg" width="250"
                                                                    height="100"></span></a></h1>
         </div>
 
@@ -58,12 +94,9 @@ background: radial-gradient(circle, rgb(240, 236, 233) 20%, #f19305de 80%);box-s
 </header><!-- End Header -->
 
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center" style="background: radial-gradient(circle, rgb(248, 248, 243) 10%, #ff7d03de 90%);" >
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5_mInwdO0YdYAexrKdoTe4Q_AB5j2YrtfF3gRcpF6l05R_A/viewform?usp=sf_link" target="_blank">
-            <img src="assets/img/top_img1.jpeg">
-        </a>
-
-    
+<section id="hero" class="d-flex align-items-center" style="position: relative; background-image: url(./assets/img/top_img1.jpeg);background-size: cover;">
+    <a class="register-button" href="https://docs.google.com/forms/d/e/1FAIpQLSe5_mInwdO0YdYAexrKdoTe4Q_AB5j2YrtfF3gRcpF6l05R_A/viewform?usp=sf_link" target="_blank">Register Now!</a>
+        
 </section><!-- End Hero -->
 
 <main id="main">
