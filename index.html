@@ -31,20 +31,20 @@
     <style>
         .register-button {
           background-color: #1c87c9;
-          -webkit-border-radius: 60px;
-          border-radius: 60px;
+          -webkit-border-radius: 35px;
+          border-radius: 35px;
           border: none;
           color: #eeeeee;
           cursor: pointer;
           display: inline-block;
           font-family: sans-serif;
-          font-size: 20px;
+          font-size: 10px;
           padding: 5px 15px;
           text-align: center;
           text-decoration: none;
           position: absolute;
-          bottom: 8px;
-          left: 8px;
+          bottom: 12px;
+          left: 10%;
         }
         @keyframes glowing {
           0% {
@@ -65,9 +65,132 @@
         }
       </style>
 
+<style>
+
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(236, 161, 62);
+      background-color: rgba(247, 204, 85, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+    
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+    
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 80px;
+    }
+    
+    .overlay .text-para {
+      position: absolute;
+      top: 100px;
+      font-size: 20px;
+    }
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+      .overlay div {font-size: 20px}
+      .overlay .text-para {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+    }
+    </style>
+
 </head>
 
 <body>
+
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" id="closebtn" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="text-para" class="text-para" style="margin: auto; text-align: center;">
+            <u style="color:#f94705;"><h1 id="text-para-heading" style="color:#f94705;"></h1></u>
+            <img id="text-para-img" height="400px">
+            <p id="text-para-para" style="color: white; padding-left: 15%;padding-right: 15%;"></p>
+
+        </div>
+    </div>
+    <script>
+        function openNav(num) {
+            var myNav=document.getElementById("myNav");
+            myNav.style.width = "100%";
+            // document.getElementById("closebtn").style.fontSize="80px";
+            var textPara =document.getElementById("text-para");
+            var p=document.getElementById("text-para-para");
+            var heading= document.getElementById("text-para-heading");
+            var img= document.getElementById("text-para-img");
+            var txt="";
+            var img_src="";
+            var headi="";
+            switch (num) {
+                case 0:
+                    txt = "If you’re facing trouble in maintaining your brand visibility on a constant and regular basis, then EdWise is just what you need. You need smart, focused social media content. We promote in a manner that keeps your social efforts uniform and powerful while also elevating your brand above the competition. Digital campaigns, google ads, PPC, all these can be achieved under social media management. We mark your presence on Facebook, Instagram and other social networking sites.";
+                    headi= "Social Media Management";
+                    img_src="./assets/img/w4-modified.png";
+                    break;
+                case 1:
+                    txt = "Edwise is an innovative one-stop destination for web solutions and website design. We deliver solutions with customised & quality services to businesses globally. Explore our best services in Web Design, Web Maintenance and Web creation. If you are looking for the BEST then we are the people for you.";
+                    headi= "Website";
+                    img_src= "./assets/img/w2-modified.png";
+                    break;
+                case 2:
+                    txt = "We have a new system of establishing a Network. We are offering a platform that will connect you with a wider audience. It will help to channel information and relation. We establish a web structure that helps to keep a hold on everyone you know and anyone who desires to connect. Alumni network, networking among schools and what not! We will provide you with a gateway to interact with others and get enlightenment.";
+                    headi= "Networking";
+                    img_src="./assets/img/w5-modified.png";
+                    break;
+                case 3:
+                    txt = "Guidance is much needed in today’s world of diversity. EdWise offers career counselling at the primary level so that student knows in which direction they are supposed to excel. Counselling will assist them with a clear head. It will enable a better understanding of dos and don'ts. The new education policy will be decoded with professional experts. To address doubts and any problems faced by the students, the students support system is there to help them out.";
+                    headi= "Consulting";
+                    img_src="./assets/img/w6-modified.png";
+                    break;
+                case 4:
+                    txt = "Entrepreneurship is the buzzword of our times and is going to be of paramount importance as the culture of entrepreneurship take centre stage in the development of our nation. Schools also need to be prepared for the entrepreneurship era so we are here to extend our support in that area. Children's need guidance for developing their ideas and making a business out of them. EdWise has a dedicated team to aid them in their endeavours. We will provide them with expert's views and sessions to grow the culture of entrepreneurship. Our direction to your destination!";
+                    headi= "Entrepreneurship";
+                    img_src="./assets/img/w1-modified.png";
+                    break;
+                default:
+                    txt = "No value found";
+            }
+            var text = document.createTextNode(txt);
+            p.appendChild(text);
+            var htext = document.createTextNode(headi);
+            heading.appendChild(htext);
+            img.setAttribute("src",img_src);
+            
+        }
+
+        function closeNav() {
+            document.getElementById("text-para-heading").innerHTML="";
+            document.getElementById("text-para-img").innerHTML="";
+            document.getElementById("text-para-para").innerHTML="";
+            document.getElementById("myNav").style.width = "0%";
+            // document.getElementById("closebtn").style.fontSize="0px";
+        }
+    </script>
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-center"  style="background: rgb(255, 255, 255);
@@ -190,7 +313,7 @@ background: radial-gradient(circle, rgb(255, 255, 255) 20%, #ffffff 80%);box-sha
                                     If you’re facing trouble in maintaining your brand visibility on a constant and
                                     regular basis, then EdWise is just what you need. 
                                     <br>
-                                    <a href="./service1.html">Read More>></a>
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(0)">Read More>></span>
                                 </p>
                             </div>
                         </div>
@@ -205,7 +328,7 @@ background: radial-gradient(circle, rgb(255, 255, 255) 20%, #ffffff 80%);box-sha
                                     Edwise is an innovative one-stop destination for web solutions and website design.
                                     <br>
 
-                                    <a href="./service1.html">Read More>></a>
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(1)">Read More>></span>
 
                                 </p>
                             </div>
@@ -221,7 +344,7 @@ background: radial-gradient(circle, rgb(255, 255, 255) 20%, #ffffff 80%);box-sha
                                     We have a new system of establishing a Network. We are offering a platform that will
                                     connect you with a wider audience.
                                     <br>
-                                    <a href="./service1.html">Read More>></a>
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(2)">Read More>></span>
 
                                 </p>
                             </div>
@@ -237,7 +360,7 @@ background: radial-gradient(circle, rgb(255, 255, 255) 20%, #ffffff 80%);box-sha
                                     Guidance is much needed in today’s world of diversity. EdWise offers career
                                     counselling at the primary level...
                                     <br>
-                                    <a href="./service1.html">Read More>></a>
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(3)">Read More>></span>
                                 </p>
                             </div>
                         </div>
@@ -251,7 +374,7 @@ background: radial-gradient(circle, rgb(255, 255, 255) 20%, #ffffff 80%);box-sha
                                     Entrepreneurship is the buzzword of our times and is going to be of paramount
                                     importance as the culture...
                                     <br>
-                                    <a href="./service1.html">Read More>></a>
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(4)">Read More>></span>
                                 </p>
                             </div>
                         </div>
