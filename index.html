@@ -10,34 +10,195 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="./assets/img/edwise_logo_black.svg" rel="icon">
+    <link href="./assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
           rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->  
+
+    <link href="./assets/vendor/aos/aos.css" rel="stylesheet" type="text/css">
+    <link href="./assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" type="text/css">
+    <link href="./assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" type="text/css">
+    <link href="./assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css">
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .register-button {
+          background-color: #1c87c9;
+          -webkit-border-radius: 35px;
+          border-radius: 35px;
+          border: none;
+          color: #eeeeee;
+          cursor: pointer;
+          display: inline-block;
+          font-family: sans-serif;
+          font-size: 18px;
+          padding: 5px 20px;
+          text-align: center;
+          text-decoration: none;
+          position: absolute;
+          bottom: 12px;
+          left: 45%;
+        }
+        @keyframes glowing {
+          0% {
+            background-color: #ef3e09;
+            box-shadow: 0 0 5px #2ba805;
+          }
+          50% {
+            background-color: #fdf60b;
+            box-shadow: 0 0 20px #e36207;
+          }
+          100% {
+            background-color: #f9900e;
+            box-shadow: 0 0 5px #517645;
+          }
+        }
+        .register-button {
+          animation: glowing 1300ms infinite;
+        }
+      </style>
+
+<style>
+
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(236, 161, 62);
+      background-color: rgba(247, 204, 85, 0.9);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+    
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+    
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 80px;
+    }
+    
+    .overlay .text-para {
+      position: absolute;
+      top: 100px;
+      font-size: 20px;
+    }
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+      .overlay div {font-size: 20px}
+      .overlay .text-para {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+    }
+    </style>
 
 </head>
 
 <body>
 
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" id="closebtn" class="closebtn" onclick="closeNav()">&times;</a>
+        <div id="text-para" class="text-para" style="margin: auto; text-align: center;">
+            <u style="color:#f94705;"><h1 id="text-para-heading" style="color:#f94705;"></h1></u>
+            <img id="text-para-img" height="400px">
+            <p id="text-para-para" style="color: white; padding-left: 15%;padding-right: 15%;"></p>
+
+        </div>
+    </div>
+    <script>
+        function openNav(num) {
+            var myNav=document.getElementById("myNav");
+            myNav.style.width = "100%";
+            // document.getElementById("closebtn").style.fontSize="80px";
+            var textPara =document.getElementById("text-para");
+            var p=document.getElementById("text-para-para");
+            var heading= document.getElementById("text-para-heading");
+            var img= document.getElementById("text-para-img");
+            var txt="";
+            var img_src="";
+            var headi="";
+            switch (num) {
+                case 0:
+                    txt = "If you’re facing trouble in maintaining your brand visibility on a constant and regular basis, then EdWise is just what you need. You need smart, focused social media content. We promote in a manner that keeps your social efforts uniform and powerful while also elevating your brand above the competition. Digital campaigns, google ads, PPC, all these can be achieved under social media management. We mark your presence on Facebook, Instagram and other social networking sites.";
+                    headi= "Social Media Management";
+                    img_src="./assets/img/w4-modified.png";
+                    break;
+                case 1:
+                    txt = "Edwise is an innovative one-stop destination for web solutions and website design. We deliver solutions with customised & quality services to businesses globally. Explore our best services in Web Design, Web Maintenance and Web creation. If you are looking for the BEST then we are the people for you.";
+                    headi= "Website";
+                    img_src= "./assets/img/w2-modified.png";
+                    break;
+                case 2:
+                    txt = "We have a new system of establishing a Network. We are offering a platform that will connect you with a wider audience. It will help to channel information and relation. We establish a web structure that helps to keep a hold on everyone you know and anyone who desires to connect. Alumni network, networking among schools and what not! We will provide you with a gateway to interact with others and get enlightenment.";
+                    headi= "Networking";
+                    img_src="./assets/img/w5-modified.png";
+                    break;
+                case 3:
+                    txt = "Guidance is much needed in today’s world of diversity. EdWise offers career counselling at the primary level so that student knows in which direction they are supposed to excel. Counselling will assist them with a clear head. It will enable a better understanding of dos and don'ts. The new education policy will be decoded with professional experts. To address doubts and any problems faced by the students, the students support system is there to help them out.";
+                    headi= "Consulting";
+                    img_src="./assets/img/w6-modified.png";
+                    break;
+                case 4:
+                    txt = "Entrepreneurship is the buzzword of our times and is going to be of paramount importance as the culture of entrepreneurship take centre stage in the development of our nation. Schools also need to be prepared for the entrepreneurship era so we are here to extend our support in that area. Children's need guidance for developing their ideas and making a business out of them. EdWise has a dedicated team to aid them in their endeavours. We will provide them with expert's views and sessions to grow the culture of entrepreneurship. Our direction to your destination!";
+                    headi= "Entrepreneurship";
+                    img_src="./assets/img/w1-modified.png";
+                    break;
+                default:
+                    txt = "No value found";
+            }
+            var text = document.createTextNode(txt);
+            p.appendChild(text);
+            var htext = document.createTextNode(headi);
+            heading.appendChild(htext);
+            img.setAttribute("src",img_src);
+            
+        }
+
+        function closeNav() {
+            document.getElementById("text-para-heading").innerHTML="";
+            document.getElementById("text-para-img").innerHTML="";
+            document.getElementById("text-para-para").innerHTML="";
+            document.getElementById("myNav").style.width = "0%";
+            // document.getElementById("closebtn").style.fontSize="0px";
+        }
+    </script>
+
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
+<header id="header" class="fixed-top d-flex align-items-center"  style="background: rgb(255, 255, 255);
+background: radial-gradient(circle, rgb(255, 255, 255) 20%, #ffffff 80%);box-shadow: 0px 0px 0px">
+    <div class="container d-flex align-items-center justify-content-between" style="max-width:95%">
 
         <div class="logo">
-            <h1 class="text-light"><a href="index.html"><span><img src="./assets/img/EdwiseLogo.svg" width="250"
+            <h1 class="text-light"><a href="index.html"><span><img src="./assets/img/edwise_logo_black.svg" width="250"
                                                                    height="100"></span></a></h1>
         </div>
 
@@ -56,29 +217,9 @@
 </header><!-- End Header -->
 
 <!-- ======= Hero Section ======= -->
-<section id="hero" class="d-flex align-items-center">
-
-    <div class="container">
-        <div class="row gy-4">
-            <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-                <h1>The digital side of Education</h1>
-                <h2>Infrastructure of today for development of tomorrow</h2>
-                <div>
-                    <a class="custom-btn btn-bg btn mt-3" data-aos="fade-up" data-aos-delay="100">Let
-                        us discuss together!</a>
-                </div>
-                <div>
-                    <strong class="d-block py-3 pl-5 text-primary" data-aos="fade-up" data-aos-delay="200"><i
-                            class="fa fa-phone mr-2"></i> <a href="tel:+919758016260" class="mobile">+91
-                        9758016260</a></strong>
-                </div>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 hero-img">
-                <img src="assets/img/top.JPG" class="img-fluid animated" alt="">
-            </div>
-        </div>
-    </div>
-
+<section id="hero" class="d-flex align-items-center" style="position: relative; background-image: url(./assets/img/top_img1.png);background-size: cover;">
+    <a class="register-button" href="https://docs.google.com/forms/d/e/1FAIpQLSe5_mInwdO0YdYAexrKdoTe4Q_AB5j2YrtfF3gRcpF6l05R_A/viewform?usp=sf_link" target="_blank">Register Now!</a>
+        
 </section><!-- End Hero -->
 
 <main id="main">
@@ -89,17 +230,17 @@
 
             <div class="row justify-content-between">
                 <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-                    <img src="assets/img/top_1.JPG" class="img-fluid" alt="" data-aos="zoom-in">
+                    <img src="./assets/img/whoWeAre1.jpeg" class="img-fluid" alt="" data-aos="zoom-in">
                 </div>
-                <div class="col-lg-6 pt-5 pt-lg-0">
+                <div class="col-lg-6 pt-5 pt-lg-0" style="line-height: 2;display: inline-block;">
+                    <br><br><br>
                     <h3 data-aos="fade-up">Who we are</h3>
                     <p data-aos="fade-up" data-aos-delay="100">
                         We are an Edtech company providing solutions to the schools for new era. We connect schools and
                         provide platform for knowledge sharing, competition and learning. We help schools represent
                         themselves in digital era.
-
                     </p>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                             <i class="bx bx-receipt"></i>
                             <h4>Corporis voluptates sit</h4>
@@ -110,7 +251,7 @@
                             <h4>Ullamco laboris nisi</h4>
                             <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -121,7 +262,7 @@
     <section id="vision" class="about">
         <div class="container">
 
-            <div class="row justify-content-between">
+            <!-- <div class="row justify-content-between">
 
                 <div class="row">
                     <div class="section-title">
@@ -132,6 +273,19 @@
                         field. Building a community of schools and align school education with 21st century demands.
                     </p>
                 </div>
+            </div> -->
+            <div class="row justify-content-between">
+                <div class="col-lg-6 pt-5 pt-lg-0">
+                    <br><br><br><br>
+                    <h3 data-aos="fade-up">Vision</h3>
+                    <p data-aos="fade-up" data-aos-delay="100"  style="margin-right: 40px">
+                        To bridge the prevailing digital disparity among schools and provide them with a level playing
+                        field. Building a community of schools and align school education with 21st century demands.
+                    </p>
+                </div>
+                <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
+                    <img src="./assets/img/vision.jpeg" class="img-fluid" alt="" data-aos="zoom-in">
+                </div>
             </div>
 
         </div>
@@ -140,97 +294,87 @@
 
     <!-- ======= Services Section ======= -->
 
-    <section id="services" class="services section-bg">
+    <section id="services" class="services section-bg" style="background-color:#e1d0559e">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>Services</h2>
-                <p>Check out the great services we offer</p>
+                <h1><b>Services</b></h1>
+                <p style="font-size: 20px;">Check out the great services we offer</p>
             </div>
             <div class="row">
                 <section class="testimonials" style="padding: 0px">
                     <div class="slider">
                         <div class="slide" style="transform: translateX(0%);">
-                            <div class="testimonial">
-                                <img src="http://new.superafiliados.com/wp-content/uploads/2021/06/SA-logotype-02.png">
+                            <div class="testimonial" style="background-color:#fd010129">
+                                <img src="./assets/img/w4-modified.png" style="filter:none;width:20rem;">
                                 <blockquote class="testimonial__text">
                                     Social Media Management
                                 </blockquote>
-                                <p style="font-size: small; text-align: justify;">
+                                <p style="font-size: small; text-align: justify;line-height: 1.7;">
                                     If you’re facing trouble in maintaining your brand visibility on a constant and
-                                    regular basis, then EdWise is just what you need. You need smart, focused social
-                                    media content. We promote in a manner that keeps your social efforts uniform and
-                                    powerful while also elevating your brand above the competition. Digital campaigns,
-                                    google ads, PPC, all these can be achieved under social media management. We mark
-                                    your presence on Facebook, Instagram and other social networking sites.
-
+                                    regular basis, then EdWise is just what you need. 
+                                    <br>
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(0)">Read More>></span>
                                 </p>
                             </div>
                         </div>
 
                         <div class="slide" style="transform: translateX(100%);">
-                            <div class="testimonial">
-                                <img src="https://www.massupt.org/wp-content/uploads/2017/11/Pearson-Logo-logotype-Horizontal-1024x463.png">
+                            <div class="testimonial" style="background-color:#4bff002e">
+                                <img src="./assets/img/w2-modified.png"  style="filter:none;width:20rem;">
                                 <blockquote class="testimonial__text">
                                     Website
                                 </blockquote>
-                                <p style="font-size: small; text-align: justify;">
-                                    Website is an innovative one-stop destination for web solutions and website design.
-                                    We deliver solutions with customised & quality services to businesses globally.
-                                    Explore our best services in Web Design, Web Maintenance and Web creation. If you
-                                    are looking for the BEST then we are the people for you.
+                                <p style="font-size: small; text-align: justify;line-height: 1.7;">
+                                    Edwise is an innovative one-stop destination for web solutions and website design.
+                                    <br>
+
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(1)">Read More>></span>
 
                                 </p>
                             </div>
                         </div>
 
                         <div class="slide" style="transform: translateX(200%);">
-                            <div class="testimonial">
-                                <img src="https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png">
+                            <div class="testimonial" style="background-color: #f30ae124;">
+                                <img src="./assets/img/w5-modified.png"  style="filter:none;width:20rem;">
                                 <blockquote class="testimonial__text">
                                     Networking
                                 </blockquote>
-                                <p style="font-size: small; text-align: justify;">
+                                <p style="font-size: small; text-align: justify;line-height: 1.7;">
                                     We have a new system of establishing a Network. We are offering a platform that will
-                                    connect you with a wider audience. It will help to channel information and relation.
-                                    We establish a web structure that helps to keep a hold on everyone you know and
-                                    anyone who desires to connect. Alumni network, networking among schools and what
-                                    not! We will provide you with a gateway to interact with others and get
-                                    enlightenment.
+                                    connect you with a wider audience.
+                                    <br>
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(2)">Read More>></span>
 
                                 </p>
                             </div>
                         </div>
 
                         <div class="slide" style="transform: translateX(300%);">
-                            <div class="testimonial">
-                                <img src="https://qgis.org/en/_downloads/24d1028b907d64a4e582abcd55300e8c/qgis-logo-monochrome.png">
+                            <div class="testimonial" style="background-color: #e1292963;">
+                                <img src="./assets/img/w6-modified.png"  style="filter:none;width:20rem;">
                                 <blockquote class="testimonial__text">
                                     Consulting
                                 </blockquote>
-                                <p style="font-size: small; text-align: justify;">
+                                <p style="font-size: small; text-align: justify;line-height: 1.7;">
                                     Guidance is much needed in today’s world of diversity. EdWise offers career
-                                    counselling at the primary level so that student knows in which direction they are
-                                    supposed to excel. Counselling will assist them with a clear head. It will enable a
-                                    better understanding of dos and don'ts. The new education policy will be decoded
-                                    with professional experts. To address doubts and any problems faced by the students,
-                                    the students support system is there to help them out.
+                                    counselling at the primary level...
+                                    <br>
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(3)">Read More>></span>
                                 </p>
                             </div>
                         </div>
                         <div class="slide" style="transform: translateX(400%);">
-                            <div class="testimonial">
-                                <img src="https://qgis.org/en/_downloads/24d1028b907d64a4e582abcd55300e8c/qgis-logo-monochrome.png">
+                            <div class="testimonial" style="background-color: #c2c96a63;">
+                                <img src="./assets/img/w1-modified.png"  style="filter:none;width:20rem;">
                                 <blockquote class="testimonial__text">
                                     Entrepreneurship
                                 </blockquote>
-                                <p style="font-size: small; text-align: justify;">
+                                <p style="font-size: small; text-align: justify;line-height: 1.7;">
                                     Entrepreneurship is the buzzword of our times and is going to be of paramount
-                                    importance as the culture of entrepreneurship take centre stage in the development
-                                    of our nation. Schools also need to be prepared for the entrepreneurship era so we
-                                    are here to extend our support in that area. Children's need guidance for developing
-                                    their ideas and making a business out of them. EdWise has a dedicated team to aid
-                                    them in their endeavours. We will provide them with expert's views and sessions to
-                                    grow the culture of entrepreneurship. Our direction to your destination!
+                                    importance as the culture...
+                                    <br>
+                                    <span style="font-size:15px;cursor:pointer;color: red" onclick="openNav(4)">Read More>></span>
                                 </p>
                             </div>
                         </div>
@@ -248,7 +392,7 @@
     </section><!-- End Services Section -->
 
     <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq section-bg">
+    <section id="faq" class="faq section-bg" style="background-color: #f9e70f1f;">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -259,41 +403,35 @@
             <ul class="faq-list" data-aos="fade-up" data-aos-delay="100">
 
                 <li>
-                    <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at
-                        lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i
+                    <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">What is Edwise? <i class="bi bi-chevron-down icon-show"></i><i
                                 class="bi bi-chevron-up icon-close"></i></div>
                     <div id="faq1" class="collapse" data-bs-parent=".faq-list">
                         <p>
-                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
-                            curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                            Edwise is one stop destination for digital learning process. It is a platform where you explore all the possibilities for your digital learning experience. Edwise caters to all educational premises. Whether it is social media management, website, networking, consulting or entrepreneurship, we have got you covered!
                         </p>
                     </div>
                 </li>
 
                 <li>
-                    <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat scelerisque varius
-                        morbi enim nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i
+                    <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">How to reach out to Edwise? <i class="bi bi-chevron-down icon-show"></i><i
                                 class="bi bi-chevron-up icon-close"></i></div>
                     <div id="faq2" class="collapse" data-bs-parent=".faq-list">
                         <p>
-                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
-                            laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium.
-                            Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa
-                            tincidunt dui.
+                            Edwise is always ready to help you and assist you in the problems you are tangled. You can reach out to us through Email id, Phone call or the Inquiry form available on the website. 
+                            <br>
+                                For email: edwiseindia22@gmail.com
+                            <br>
+                                To reach out to us dial the digits: +91 89791 20909, +91 97580 16260
                         </p>
                     </div>
                 </li>
 
                 <li>
-                    <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur
-                        adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i
+                    <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Why to choose Edwise? <i class="bi bi-chevron-down icon-show"></i><i
                                 class="bi bi-chevron-up icon-close"></i></div>
                     <div id="faq3" class="collapse" data-bs-parent=".faq-list">
                         <p>
-                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                            elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus
-                            pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at
-                            elementum eu facilisis sed odio morbi quis
+                            We have solutions to resolve all your problems. We will enhance your digital presence with authentic and quality content. 24/7 support system is available to address your queries then and there. We are here to bridging the disparity and building an educational network to flourish your business. 
                         </p>
                     </div>
                 </li>
